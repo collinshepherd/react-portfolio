@@ -1,18 +1,19 @@
-const styles = { 
+const styles = {
   h1: {
-      fontSize: "3rem",
-      color: "#fff",
+    fontSize: "3rem",
+    color: "#fff",
   },
   text: {
     color: "#fff",
-  }
-}
-
+  },
+};
 
 export default function Portfolio() {
   return (
     <div className="container-fluid mt-3">
-      <h1 className="flex justify-center" style={styles.h1}>About Page</h1>
+      <h1 className="flex justify-center" style={styles.h1}>
+        About Page
+      </h1>
       <p style={styles.text}>
         Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
         Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed

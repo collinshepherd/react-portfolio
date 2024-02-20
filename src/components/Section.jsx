@@ -1,13 +1,11 @@
-import { Outlet } from "react-router-dom"; 
-
-
+import { Outlet } from "react-router-dom";
 
 function Section() {
-    return (
-        <div className="section-container">
-            <Outlet />
-        </div>
-    )
+  return (
+    <div className="section-container">
+      <Outlet />
+    </div>
+  );
 }
 
-export default Section
+export default Section;
