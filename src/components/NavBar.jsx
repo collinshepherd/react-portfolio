@@ -1,99 +1,102 @@
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import {NavLink} from "react-router-dom";
-import Container from "react-bootstrap/Container";
+import "../styles/NavBar.scss";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
-  AiFillStar,
-  AiOutlineFundProjectionScreen,
-  AiOutlineUser,
-} from "react-icons/ai";
-
-import { CgFileDocument } from "react-icons/cg";
+  faHome,
+  faUser,
+  faEnvelope,
+  faSuitcase,
+  faBars,
+  faClose,
+} from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
+  const [showNav, setShowNav] = useState(false);
 
   return (
-    <Navbar
-      className={"navbar"}
-    >
-      <Container>
+    <div className="nav-bar">
+      <nav>
+        <FontAwesomeIcon
+          onClick={() => setShowNav(true)}
+          icon={faBars}
+          color="#ffd700"
+          size="3x"
+          className={showNav ? "d-none" : "mobile-icon"}
+        />
 
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          
+        <FontAwesomeIcon
+          onClick={() => setShowNav(false)}
+          icon={faClose}
+          color="#ffd700"
+          size="3x"
+          className={showNav ? "close-icon" : "d-none"}
+        />
+
+        <ul
+          className={
+            showNav ? "mobile-view transition" : "nav justify-content-end "
+          }
         >
-          <span></span>
-          <span></span>
-          <span></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              
+          <li className="nav-item me-5">
+            <NavLink exact="true" activeclassname="active" to="/">
+              <FontAwesomeIcon icon={faHome} color="#ffd700" />
+            </NavLink>
+          </li>
+          <li className="nav-item me-5">
             <NavLink
-                to= "/"
-                style={({ isActive, isPending, isTransitioning }) => {
-                    return {
-                      fontWeight: isActive ? "bold" : "",
-                      color: isPending ? "red" : "black",
-                      viewTransitionName: isTransitioning ? "slide" : "",
-                    };
-                  }}
-                >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </NavLink>
-              
-            </Nav.Item>
-
-            <Nav.Item>
+              exact="true"
+              activeclassname="active"
+              className={"about-link"}
+              to="/about"
+            >
+              <FontAwesomeIcon icon={faUser} color="#ffd700" />
+            </NavLink>
+          </li>
+          <li className="nav-item me-5">
             <NavLink
-                to= "/portfolio"
-                style={({ isActive, isPending, isTransitioning }) => {
-                    return {
-                      fontWeight: isActive ? "bold" : "",
-                      color: isPending ? "red" : "black",
-                      viewTransitionName: isTransitioning ? "slide" : "",
-                    };
-                  }}
-                >
-                <AiFillStar style={{ marginBottom: "2px" }} /> Portfolio
-              </NavLink>
-            </Nav.Item>
-
-            <Nav.Item>
+              exact="true"
+              className={"portfolio-link"}
+              activeclassname="active"
+              to="/portfolio"
+            >
+              <FontAwesomeIcon icon={faSuitcase} color="#ffd700" />
+            </NavLink>
+          </li>
+          <li className="nav-item me-5">
             <NavLink
-                to= "/project"
-                style={({ isActive, isPending, isTransitioning }) => {
-                    return {
-                      fontWeight: isActive ? "bold" : "",
-                      color: isPending ? "red" : "black",
-                      viewTransitionName: isTransitioning ? "slide" : "",
-                    };
-                  }}
-                >
-                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Projects
-              </NavLink>
-            </Nav.Item>
-
-            <Nav.Item>
-                        <NavLink
-                to= "/resume"
-                style={({ isActive, isPending, isTransitioning }) => {
-                    return {
-                      fontWeight: isActive ? "bold" : "",
-                      color: isPending ? "red" : "black",
-                      viewTransitionName: isTransitioning ? "slide" : "",
-                    };
-                  }}
-                >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </NavLink>
-            </Nav.Item>
-
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+              exact="true"
+              className={"contact-link"}
+              activeclassname="active"
+              to="/contact"
+            >
+              <FontAwesomeIcon icon={faEnvelope} color="#ffd700" />
+            </NavLink>
+          </li>
+          <li className="nav-item me-5">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/collinshepherd"
+              className="github-link"
+            >
+              <FontAwesomeIcon icon={faGithub} color="#ffd700" />
+            </a>
+          </li>
+          <li className="nav-item me-5">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/collin-shepherd-bba52929a/"
+              className="linkedin-link"
+            >
+              <FontAwesomeIcon icon={faLinkedin} color="#ffd700" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 }
 

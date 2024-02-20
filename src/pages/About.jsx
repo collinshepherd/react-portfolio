@@ -1,8 +1,19 @@
+const styles = { 
+  h1: {
+      fontSize: "3rem",
+      color: "#fff",
+  },
+  text: {
+    color: "#fff",
+  }
+}
+
+
 export default function About() {
   return (
-    <div>
-      <h1>About Page</h1>
-      <p>
+    <div className="container-fluid mt-3">
+      <h1 className="flex justify-center" style={styles.h1}>About Page</h1>
+      <p style={styles.text}>
         Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
         Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
         mollis diam. Nunc aliquet risus ac finibus porta. Nam quis arcu non
