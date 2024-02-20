@@ -1,0 +1,143 @@
+.nav-bar {
+  background-color: #181818;
+  height: 80px;
+  min-height: 80px;
+
+  nav {
+    display: block;
+    text-align: center;
+
+    a {
+      font-size: 50px;
+      color: #fff;
+      display: block;
+      line-height: 51px;
+      height: 51px;
+      position: relative;
+      text-decoration: none;
+      list-style-type: none;
+      padding-top: 15px;
+
+      i {
+        transition: all 0.3s ease-out;
+      }
+
+      &:hover {
+        color: #ffd700;
+
+        svg {
+          opacity: 0;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &:after {
+        content: "";
+        font-size: 9px;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      &:first-child {
+        &:after {
+          content: "HOME";
+        }
+      }
+    }
+    a.about-link {
+      &:after {
+        content: "ABOUT";
+      }
+    }
+
+    a.contact-link {
+      &:after {
+        content: "CONTACT";
+      }
+    }
+
+    a.portfolio-link {
+      &:after {
+        content: "PORTFOLIO";
+      }
+    }
+    a.github-link {
+      &:after {
+        content: "GITHUB";
+      }
+    }
+    a.linkedin-link {
+      &:after {
+        content: "LINKEDIN";
+      }
+    }
+  }
+}
+
+.mobile-icon {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav-icons {
+    display: none;
+    opacity: 0;
+  }
+  .nav-bar {
+    height: fit-content;
+
+    .mobile-icon,
+    .close-icon {
+      padding-top: 10px;
+      padding-right: 10px;
+      display: block;
+      float: right;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+    nav {
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+        padding-top: 40px;
+        max-width: fit-content;
+      }
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      a:after {
+        opacity: 1;
+        position: initial;
+        width: auto;
+        margin-left: 10px;
+      }
+
+      ul {
+        list-style: none;
+        display: none;
+      }
+    }
+    .transition {
+      transition: 0.5s ease-in;
+      display: block;
+    }
+  }
+}
