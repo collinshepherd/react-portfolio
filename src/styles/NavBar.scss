@@ -36,10 +36,10 @@
 
       &:after {
         content: "";
-        font-size: 9px;
+        font-size: 11px;
         letter-spacing: 2px;
         position: absolute;
-        bottom: 0;
+        top: 15px;
         display: block;
         width: 100%;
         text-align: center;
@@ -62,12 +62,14 @@
 
     a.contact-link {
       &:after {
+        right: 3px;
         content: "CONTACT";
       }
     }
 
     a.portfolio-link {
       &:after {
+        right: 10px;
         content: "PORTFOLIO";
       }
     }
@@ -78,6 +80,7 @@
     }
     a.linkedin-link {
       &:after {
+        right: 5px;
         content: "LINKEDIN";
       }
     }
@@ -88,7 +91,7 @@
   display: none;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .nav-icons {
     display: none;
     opacity: 0;
