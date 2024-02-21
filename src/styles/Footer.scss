@@ -1,0 +1,19 @@
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #181818;
+  height: 80px;
+  min-height: 80px;
+
+  li {
+    font-size: 50px;
+    color: #fff;
+    display: block;
+    line-height: 51px;
+    position: relative;
+    text-decoration: none;
+    list-style-type: none;
+    padding-top: 15px;
+  }
+}

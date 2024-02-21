@@ -3,7 +3,7 @@ import "../styles/HomePage.scss";
 
 export default function Home() {
   return (
-    <div className="container-fluid mt-3 home-page">
+    <div className="mt-3 home-page">
       <div className="row">
         <div className="col">
           <h1 className=" home-title p-5">
@@ -21,7 +21,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="col">
+        <div className="col portrait-container">
           <img
             className="self-picture"
             src={Portrait}
