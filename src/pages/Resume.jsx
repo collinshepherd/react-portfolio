@@ -41,6 +41,13 @@ export default function Resume() {
           renderAnnotationLayer={false}
         />
       </Document>
+      <a
+        className="d-flex justify-content-center btn text-primary"
+        href="/Resume.pdf"
+        download="resume.pdf"
+      >
+        Download
+      </a>
     </div>
   );
 }
