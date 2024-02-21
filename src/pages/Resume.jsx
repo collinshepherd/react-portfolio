@@ -1,27 +1,46 @@
-const styles = {
-  h1: {
-    fontSize: "3rem",
-    color: "#fff",
-  },
-  text: {
-    color: "#fff",
-  },
-};
+import { useState } from "react";
+import resume from "/Resume.pdf";
+import { Document, Page } from "react-pdf";
+import "../styles/ResumePage.scss";
+
+import { pdfjs } from "react-pdf";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
+} from "@fortawesome/free-solid-svg-icons";
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.js",
+  import.meta.url
+).toString();
 
 export default function Resume() {
+  const [numPages, setNumPages] = useState();
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
+
   return (
-    <div className="container-fluid mt-3">
-      <h1 className="flex justify-center" style={styles.h1}>
-        About Page
-      </h1>
-      <p style={styles.text}>
-        Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
-        Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
-        mollis diam. Nunc aliquet risus ac finibus porta. Nam quis arcu non
-        lectus tincidunt fermentum. Suspendisse aliquet orci porta quam semper
-        imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
-        in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
-      </p>
+    <div className="resume-container">
+      <div className="d-flex justify-content-center">
+        <button className="mx-1" onClick={() => setPageNumber(1)}>
+          <FontAwesomeIcon icon={faArrowAltCircleLeft} color="#ffd700" />
+        </button>
+        <p className="page-number mx-1">{pageNumber}</p>
+        <button className="mx-1" onClick={() => setPageNumber(2)}>
+          <FontAwesomeIcon icon={faArrowAltCircleRight} color="#ffd700" />
+        </button>
+      </div>
+      <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
+        <Page
+          pageNumber={pageNumber}
+          renderTextLayer={false}
+          renderAnnotationLayer={false}
+        />
+      </Document>
     </div>
   );
 }
