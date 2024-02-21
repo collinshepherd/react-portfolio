@@ -34,7 +34,11 @@ export default function Resume() {
           <FontAwesomeIcon icon={faArrowAltCircleRight} color="#ffd700" />
         </button>
       </div>
-      <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
+      <Document
+        className={"resume-page"}
+        file={resume}
+        onLoadSuccess={onDocumentLoadSuccess}
+      >
         <Page
           pageNumber={pageNumber}
           renderTextLayer={false}
