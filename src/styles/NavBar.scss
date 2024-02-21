@@ -78,6 +78,12 @@
         content: "GITHUB";
       }
     }
+    a.resume-link {
+      &:after {
+        right: 2px;
+        content: "RESUME";
+      }
+    }
     a.linkedin-link {
       &:after {
         right: 5px;

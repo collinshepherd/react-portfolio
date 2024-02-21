@@ -9,6 +9,7 @@ import {
   faSuitcase,
   faBars,
   faClose,
+  faBook,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
@@ -39,12 +40,12 @@ function NavBar() {
             showNav ? "mobile-view transition" : "nav justify-content-end "
           }
         >
-          <li className="nav-item me-5">
+          <li className="nav-item me-5 ">
             <NavLink exact="true" activeclassname="active" to="/">
               <FontAwesomeIcon icon={faHome} color="#ffd700" />
             </NavLink>
           </li>
-          <li className="nav-item me-5">
+          <li className="nav-item me-5 ">
             <NavLink
               exact="true"
               activeclassname="active"
@@ -54,7 +55,17 @@ function NavBar() {
               <FontAwesomeIcon icon={faUser} color="#ffd700" />
             </NavLink>
           </li>
-          <li className="nav-item me-5">
+          <li className="nav-item me-5 ">
+            <NavLink
+              exact="true"
+              className={"resume-link"}
+              activeclassname="active"
+              to="/resume"
+            >
+              <FontAwesomeIcon icon={faBook} color="#ffd700" />
+            </NavLink>
+          </li>
+          <li className="nav-item me-5 ">
             <NavLink
               exact="true"
               className={"portfolio-link"}
@@ -64,7 +75,7 @@ function NavBar() {
               <FontAwesomeIcon icon={faSuitcase} color="#ffd700" />
             </NavLink>
           </li>
-          <li className="nav-item me-5">
+          <li className="nav-item me-5 ">
             <NavLink
               exact="true"
               className={"contact-link"}
@@ -74,7 +85,7 @@ function NavBar() {
               <FontAwesomeIcon icon={faEnvelope} color="#ffd700" />
             </NavLink>
           </li>
-          <li className="nav-item me-5">
+          <li className="nav-item me-5 ">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -84,7 +95,7 @@ function NavBar() {
               <FontAwesomeIcon icon={faGithub} color="#ffd700" />
             </a>
           </li>
-          <li className="nav-item me-5">
+          <li className="nav-item me-5 ">
             <a
               target="_blank"
               rel="noopener noreferrer"
