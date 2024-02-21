@@ -1,7 +1,6 @@
 import "../styles/NavBar.scss";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faHome,
   faUser,
@@ -84,26 +83,6 @@ function NavBar() {
             >
               <FontAwesomeIcon icon={faEnvelope} color="#ffd700" />
             </NavLink>
-          </li>
-          <li className="nav-item me-5 ">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/collinshepherd"
-              className="github-link"
-            >
-              <FontAwesomeIcon icon={faGithub} color="#ffd700" />
-            </a>
-          </li>
-          <li className="nav-item me-5 ">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.linkedin.com/in/collin-shepherd-bba52929a/"
-              className="linkedin-link"
-            >
-              <FontAwesomeIcon icon={faLinkedin} color="#ffd700" />
-            </a>
           </li>
         </ul>
       </nav>
