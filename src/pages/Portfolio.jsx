@@ -1,27 +1,48 @@
-const styles = {
-  h1: {
-    fontSize: "3rem",
-    color: "#fff",
+import Project from "../components/Project";
+import pizzaImage from "../assets/pizzapuzzler.png";
+import hangmanImage from "../assets/hangman.png";
+
+const projects = [
+  {
+    projectName: "Pizza Puzzler",
+    image: pizzaImage,
+    github: "https://github.com/collinshepherd/Pizza-Puzzler",
+    deployed: "https://pizza-puzzler-df030c54c16c.herokuapp.com/",
+    description:
+      "This project is a Pizza RPG game when the player creates pizzas to battle against other chefs to see who has the best pizza!",
   },
-  text: {
-    color: "#fff",
+  {
+    projectName: "Project Hangman",
+    image: hangmanImage,
+    github: "https://github.com/andria-goodwin/project-hangman",
+    deployed: "https://andria-goodwin.github.io/project-hangman/gamepage.html",
+    description:
+      "This project is a hangman game with 3 categories and 3 difficulties",
   },
-};
+];
 
 export default function Portfolio() {
   return (
-    <div className="container-fluid mt-3">
-      <h1 className="flex justify-center" style={styles.h1}>
-        About Page
+    <div>
+      <h1 className="d-flex justify-content-center text-danger my-3">
+        Projects
       </h1>
-      <p style={styles.text}>
-        Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
-        Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
-        mollis diam. Nunc aliquet risus ac finibus porta. Nam quis arcu non
-        lectus tincidunt fermentum. Suspendisse aliquet orci porta quam semper
-        imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
-        in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
-      </p>
+      <div className="m-auto">
+        <Project
+          name={projects[0].projectName}
+          image={projects[0].image}
+          github={projects[0].github}
+          deployed={projects[0].deployed}
+          description={projects[0].description}
+        />
+        <Project
+          name={projects[1].projectName}
+          image={projects[1].image}
+          github={projects[1].github}
+          deployed={projects[1].deployed}
+          description={projects[1].description}
+        />
+      </div>
     </div>
   );
 }
